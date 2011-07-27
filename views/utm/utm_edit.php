@@ -14,11 +14,11 @@
 		$northing_answer = null;
 	?>
 
-	<h4>UTM<br/><span style="font-size:10px;">If your location coordinates are in UTM, and not Lat, Lon, use this to convert them to Lat Lon and back and forth.</span></h4>
-	<p><b>Hemispher:</b> <br><?php print form::dropdown('umt_hemisphere', $hemisphere_array, $hemisphere_answer); ?> </p>
-	<p><b>Zone:</b> <br/><?php print form::dropdown('umt_zone', $zone_array, $zone_answer); ?></p>
-	<p><b>Easting:</b> <br/><?php print form::input('umt_easting', $easting_answer, ' style="width:200px;"'); ?></p>
-	<p><b>Northing:</b> <br/><?php print form::input('umt_northing', $northing_answer, 'style="width:200px;"'); ?></p>
+	<h4><?php echo Kohana::lang('utm.utm_type');?><br/><span style="font-size:10px;"><?php echo Kohana::lang('utm.utm_description');?></span></h4>
+	<p><b><?php echo Kohana::lang('utm.hemispher');?></b> <br><?php print form::dropdown('umt_hemisphere', $hemisphere_array, $hemisphere_answer); ?> </p>
+	<p><b><?php echo Kohana::lang('utm.zone');?></b> <br/><?php print form::dropdown('umt_zone', $zone_array, $zone_answer); ?></p>
+	<p><b><?php echo Kohana::lang('utm.easting');?></b> <br/><?php print form::input('umt_easting', $easting_answer, ' style="width:200px;"'); ?></p>
+	<p><b><?php echo Kohana::lang('utm.northing');?></b> <br/><?php print form::input('umt_northing', $northing_answer, 'style="width:200px;"'); ?></p>
 	<p style="margin:auto; margin-top:20px">
 		<a style="padding:5px; background:#f2f2f2;border:1px solid #d1d1d1;text-decoration:none" href="#" class="btn_save" id="utm_convert">Convert UTM to Lat, Lon (To Map)</a>
 	</p>
