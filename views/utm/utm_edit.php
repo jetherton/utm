@@ -598,17 +598,28 @@
         var newLon = RadToDeg (latlon[1]);
         var newLat = RadToDeg (latlon[0]);
 
-	var lonlat = new OpenLayers.LonLat(newLon, newLat);
-	lonlat.transform(proj_4326,proj_900913);
+		// Clear the map first
+		vlayer.removeFeatures(vlayer.features);
+		$('input[name="geometry[]"]').remove();
+		
+		point = new OpenLayers.Geometry.Point(newLon, newLat);
+		OpenLayers.Projection.transform(point, proj_4326,proj_900913);
+		
+		
+		f = new OpenLayers.Feature.Vector(point);
+		vlayer.addFeatures(f);
+		
+		// create a new lat/lon object
+		myPoint = new OpenLayers.LonLat(newLon, newLat);
+		myPoint.transform(proj_4326, map.getProjectionObject());
 
-	m = new OpenLayers.Marker(lonlat);
-	markers.clearMarkers();
-	markers.addMarker(m);
-	map.setCenter(lonlat);
-
-	$("#latitude").attr("value", newLat);
-	$("#longitude").attr("value", newLon);
-
+		// display the map centered on a latitude and longitude
+		map.setCenter(myPoint, <?php echo  Kohana::config('settings.default_zoom'); ?>);
+		
+		// Update form values
+		$("#latitude").attr("value", newLat);
+		$("#longitude").attr("value", newLon);
+		
         return true;
     }
 
