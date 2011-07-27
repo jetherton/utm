@@ -18,5 +18,9 @@ $lang = array(
 'zone' => 'Zone:',
 'easting' => 'Easting:',
 'northing' => 'Northing:',
+'utm_zone' =>'UTM Zone:',
+'lat' =>'Convert UTM to Lat, Lon (To Map)',
+'lon' => 'Convert Lat, Lon (From Map) to UTM',
+
 
 );

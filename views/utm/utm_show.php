@@ -1,4 +1,4 @@
 <li>
 	<small><?php echo Kohana::lang('utm.utm');?></small>
-	<?php echo "UTM Zone: ". $zone. " Easting: ". $easting. " Northing: ". $northing; ?>
+	<?php echo  Kohana::lang('utm.utm_zone')." ". $zone.  Kohana::lang('utm.easting')." ". $easting.  Kohana::lang('utm.northing')." ". $northing; ?>
 </li>
