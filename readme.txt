@@ -4,7 +4,7 @@ website: http://apps.ushahidi.com
 description: Allows users to use UTM coordinates instead of Latitude and Longitude
 version: 1.0
 requires: 2.0
-tested up to: 2.0
+tested up to: 2.1
 author: John Etherton
 author website: http://johnetherton.com
 
